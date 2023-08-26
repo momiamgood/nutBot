@@ -1,0 +1,6 @@
+{
+    "require": {
+        "nutgram/nutgram": "^4.5",
+        "illuminate/database": "^10.20"
+    }
+}
