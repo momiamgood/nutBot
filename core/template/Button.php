@@ -2,6 +2,8 @@
 
 namespace template;
 
+use SergiX44\Nutgram\Nutgram;
+
 class Button
 {
     const TextType = "text";
@@ -13,13 +15,13 @@ class Button
     protected $data;
     protected $mailingId;
 
-    public function __construct($buttonData)
-    {
-        $buttonData = explode(";", $buttonData);
+    protected $action;
 
-        $this->text = $buttonData[0];
-        $this->type = $buttonData[1];
-        $this->data = $buttonData[2];
+    public function __construct($type, $action, $text)
+    {
+        $this->type = $type;
+        $this->action = $action;
+        $this->text = $text;
     }
 
     public function GetText()

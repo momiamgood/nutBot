@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Eloquent;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Eloquent\Model
 {
@@ -11,8 +12,8 @@ class Order extends Eloquent\Model
         'user_id'
     ];
 
-    public function getUserOrdersCount($user_id)
+    public function getOrderer (): HasOne
     {
-
+        return $this->hasOne('users', 'chat_id', 'chat_id');
     }
 }

@@ -35,7 +35,10 @@ class Template
         }
 
         // заполняю кнопки шаблона
-        preg_match_all("/<button>(.*?)<\/button>/", $templateText, $matches);
+        preg_match_all('/<button\s+type="([^"]+)"\s+data="([^"]+)">([^<]+)<\/button>/', $templateText, $buttons);
+
+
+
         $templateButtons = $matches[1];
 
         $k = 1;

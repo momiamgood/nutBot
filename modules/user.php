@@ -1,5 +1,6 @@
 <?php
 
+use models\User;
 use SergiX44\Nutgram\Nutgram;
 use template\Template;
 
@@ -10,7 +11,7 @@ $bot->onCommand('start', function(Nutgram $bot) {
     ]);
 
     $template = new Template('user/menu/start');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('create_order', function(Nutgram $bot) {
@@ -23,32 +24,32 @@ $bot->onCommand('create_order', function(Nutgram $bot) {
     ]);
 
     $template = new Template('user/menu/create_order');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('get_free_orders', function(Nutgram $bot) {
     $template = new Template('user/menu/get_free_orders');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('franchise', function(Nutgram $bot) {
     $template = new Template('user/menu/franchise');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('contacts', function(Nutgram $bot) {
     $template = new Template('user/menu/contacts');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('lc', function(Nutgram $bot) {
     $template = new Template('user/menu/lc');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 $bot->onCommand('about', function(Nutgram $bot) {
     $template = new Template('user/menu/about');
-    $bot->sendMessage($template->text);
+    $bot->sendMessage($template->text, $bot->chatId());
 });
 
 
